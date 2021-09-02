@@ -1,9 +1,5 @@
 import java.util.Scanner;
 
-import javax.lang.model.util.ElementScanner6;
-
-import jdk.tools.jlink.internal.SymLinkResourcePoolEntry;
-
 /**
  * This is the driver class that will control all Account functions
  * 
@@ -16,8 +12,7 @@ public class Bank
     {
         Scanner in = new Scanner(System.in);
         System.out.print("What is the name on the account?\n");
-        String name = in.next();
-        Account userAccount = new Account(name, 0.0);
+        Account userAccount = new Account(in.next(), 0.0);
 
         boolean done = false;
         while(!done) //Program exit condition
@@ -31,12 +26,14 @@ public class Bank
             else if(choice == 1)
             {
                 //Check balance
-                System.out.println("Check balance selected.");
+                System.out.printf("Your current balance is %.2f", userAccount.getBalance());
             }
             else if(choice == 2)
             {
                 //Deposit
-                System.out.println("Deposit selected.");
+                System.out.println("How much would you like to deposit?");
+                userAccount.deposit(in.nextDouble());
+                System.out.printf("Your new balance is %.2f", userAccount.getBalance());
             }
             else if(choice == 3)
             {
@@ -68,8 +65,8 @@ public class Bank
             );
 
         //Input validation for choice
-        int userChoice = in.nextInt();
+        int choice = in.nextInt();
 
-        return userChoice;
+        return choice;
     }
 }
