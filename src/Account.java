@@ -7,10 +7,10 @@ public class Account
     private double balance;
 
     //Constructor
-    public Account(String nameInput, double initBalance)
+    public Account(String accountHolder, double balance)
     {
-        accountHolder = nameInput;
-        balance = initBalance;
+        this.accountHolder = accountHolder;
+        this.balance = balance;
     }
 
     //Parameterless constructor

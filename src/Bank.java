@@ -27,6 +27,7 @@ public class Bank
             {
                 //Check balance
                 System.out.printf("Your current balance is %.2f", userAccount.getBalance());
+                System.out.println("");
             }
             else if(choice == 2)
             {
@@ -34,11 +35,17 @@ public class Bank
                 System.out.println("How much would you like to deposit?");
                 userAccount.deposit(in.nextDouble());
                 System.out.printf("Your new balance is %.2f", userAccount.getBalance());
+                System.out.println("");
             }
             else if(choice == 3)
             {
                 //Withdraw
-                System.out.println("Withdraw selected.");
+                System.out.printf("Your current balance is: %.2f", userAccount.getBalance());
+                System.out.println("");
+                System.out.println("How much would you like to withdraw?");
+                userAccount.withdraw(in.nextDouble());
+                System.out.printf("Okay. Your new balance is: %.2f", userAccount.getBalance());
+                System.out.println("\n");
             }
         }
 
