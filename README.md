@@ -10,10 +10,11 @@ This is my first project that is not being done for a grade or to learn a partic
 
 My goals for this Banking app seem pretty achievable with where I am now. Here they are in list form:
 
-* In it's simpliest form, have an app that can offer 3 basic funtions:
-    * Have a balance
-    * Deposit money, adding to the balance
-    * Withdraw money, subtracting from the balance
+* In it's simpliest form, have an app that can offer 3 basic funtions: \
+    ✔️ Have a balance \
+    ✔️ Deposit money, adding to the balance \
+    ✔️ Withdraw money, subtracting from the balance \
+    ⚠️ Still need to add input validation to these!!
 * Find a way to store the information even when the app is closed.
     * In the beginning, most likely a simple .txt file I read and write to
     * EVENTUALLY, I would love to learn some basic SQL to communicate with a database
