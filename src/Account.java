@@ -47,7 +47,7 @@ public class Account
     }
 
     /**
-     * This deposits money into the account, increasing the balance
+     * This deposits money into the Account, increasing the balance
      * @param depositAmt The amount to be deposited into the account
      */
     public void deposit(double depositAmt)
@@ -56,17 +56,25 @@ public class Account
     }
 
     /**
-     * This withdraws money from the account, decreasing the balance
+     * This withdraws money from the Account, decreasing the balance
      * @param withdrawAmt The amount to be withdrawn
      */
     public void withdraw(double withdrawAmt)
     {
-        balance -= withdrawAmt;
+        if (withdrawAmt < balance) {
+            balance -= withdrawAmt;
+        } else {
+            System.out.println("Insufficient funds.");
+        }
     }
 
+    /**
+     * Method to convert Account contents into a formatted String
+     */
+    @Override
     public String toString()
     {
-        return ("The name associated with the account is: " + accountHolder +
-            "\n Your current balance is: " + balance);
+        return ("The name associated with the account is: " + accountHolder 
+                + "\n Your current balance is: " + balance);
     }
 }
