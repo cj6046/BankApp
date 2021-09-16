@@ -1,79 +1,53 @@
-import java.util.Scanner;
+import java.util.ArrayList;
 
 /**
- * This is the driver class that will control all Account functions
+ * This Class creates an ArrayList of Accounts
+ * and handles accessing those Accounts
  * 
  * @author Christopher Jones
- * @version 18 July 2021
+ * @version 15 Sept. 2021
  */
-public class Bank 
-{
-    public static void main(String[] args)
-    {
-        Scanner in = new Scanner(System.in);
-        System.out.print("What is the name on the account?\n");
-        Account userAccount = new Account(in.next(), 0.0);
+public class Bank {
 
-        boolean done = false;
-        while(!done) //Program exit condition
-        {
-            int choice = getChoice(in);
-            if(choice == 4)
-            {
-                System.out.println("Goodbye!");
-                done = true;
-            }
-            else if(choice == 1)
-            {
-                //Check balance
-                System.out.printf("Your current balance is %.2f", userAccount.getBalance());
-                System.out.println("");
-            }
-            else if(choice == 2)
-            {
-                //Deposit
-                System.out.println("How much would you like to deposit?");
-                userAccount.deposit(in.nextDouble());
-                System.out.printf("Your new balance is %.2f", userAccount.getBalance());
-                System.out.println("");
-            }
-            else if(choice == 3)
-            {
-                //Withdraw
-                System.out.printf("Your current balance is: %.2f", userAccount.getBalance());
-                System.out.println("");
-                System.out.println("How much would you like to withdraw?");
-                userAccount.withdraw(in.nextDouble());
-                System.out.printf("Okay. Your new balance is: %.2f", userAccount.getBalance());
-                System.out.println("\n");
-            }
-        }
+    private ArrayList<Account> accounts;
 
-        in.close();
+    /**
+     * Constructor to initialize ArrayList
+     */
+    public Bank() {
+        accounts = new ArrayList<Account>();
     }
 
     /**
-     * This method prints the main menu 
-     * and asks for user choice
-     * and does input validation (not yet implemented)
-     * @param in The Scanner object we are working with
-     * @return The validated int of the user choice
+     * Method to add an Account to the list
      */
-    public static int getChoice(Scanner in)
-    {
-        //Prints menu
-        System.out.println();
-        System.out.print(
-            "What would you like to do?\n" + 
-            "1: Check balance.\n" + 
-            "2: Deposit\n" + 
-            "3: Withdraw\n" + 
-            "4: Exit program\n\n"
-            );
+    public void addAccount() {
+        accounts.add(new Account());
+    }
 
-        //Input validation for choice
-        int choice = in.nextInt();
+    /**
+     * Method to return an Account's position in the ArrayList
+     */
+    public int findAccount(String accountID) {
+        int accPos = 0;
+        for (Account a : accounts) {
+            if (a.getName().equals(accountID)) {
+                accPos = accounts.indexOf(a);
+            }
+        }
+        return accPos;
+    }
 
-        return choice;
+    /**
+     * Method to authenticate the provided information with the provided Account
+     * 
+     * @param testUserID The ID provided by the user
+     * @param testUserPass The password provided by the user
+     * @param account The account found using the testUserID
+     * @return
+     */
+    public boolean authenticate(String testUserID, String testUserPass, Account account) {
+        boolean authenticated = false;
+        return authenticated;
     }
 }
