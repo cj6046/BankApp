@@ -90,6 +90,10 @@ public class Welcome {
         
     } // End of createPanel()
 
+    /**
+     * Getter method for the JPanel of this class
+     * @return The JPanel with the components
+     */
     public JPanel getPanel() {
         return panel;
     }
