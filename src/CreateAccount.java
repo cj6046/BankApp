@@ -11,7 +11,7 @@ import java.awt.event.*;
 public class CreateAccount {
     //instance variables
     private JPanel panel;
-    private JLabel username;
+    private JLabel welcomeLabel;
     private JLabel password;
     private JLabel confirmPass;
     private JTextField userText;
@@ -28,20 +28,18 @@ public class CreateAccount {
     public void createPanel() {
         panel = new JPanel(null);
 
-        username = new JLabel("Create an Account Here!");
-        username.setBounds(160, 10, 165, 25);
-        panel.add(username);
+        welcomeLabel = new JLabel("Create an Account Here!");
+        welcomeLabel.setBounds(190, 10, 165, 25);
+        panel.add(welcomeLabel);
 
-        JButton createAccountButton = new JButton("Create Your Account");
-        createAccountButton.setBounds(100, 45, 65, 25);
+        JButton createAccountButton = new JButton("Back to Home");
+        createAccountButton.setBounds(190, 450, 120, 25);
         createAccountButton.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
                 Teller t = new Teller();
                 t.changeCard(container, "Welcome");
             }
-
         });
         panel.add(createAccountButton);
     }

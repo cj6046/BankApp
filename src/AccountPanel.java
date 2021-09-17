@@ -12,6 +12,8 @@ import java.awt.event.*;
 public class AccountPanel {
     // Instance variables
     private JPanel panel;
+    private JLabel welcomeLabel;
+    private JButton logoutButton;
     private Container container;
 
 
@@ -21,7 +23,24 @@ public class AccountPanel {
     }
 
     public void createPanel() {
-        
+        panel = new JPanel(null);
+
+        // Welcome to this page
+        welcomeLabel = new JLabel("Welcome to Your Account");
+        welcomeLabel.setBounds(180, 10, 160, 25);
+        panel.add(welcomeLabel);
+
+        // Logout Button
+        logoutButton = new JButton("Logout");
+        logoutButton.setBounds(210, 450, 80, 25);
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Teller t = new Teller();
+                t.changeCard(container, "Welcome");
+            }
+        });
+        panel.add(logoutButton);
     }
 
     public JPanel getPanel() {
