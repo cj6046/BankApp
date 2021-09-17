@@ -13,8 +13,10 @@ public class CreateAccount {
     private JPanel panel;
     private JLabel username;
     private JLabel password;
+    private JLabel confirmPass;
     private JTextField userText;
     private JPasswordField passText;
+    private JPasswordField confirmPassText;
 
     private Container container;
 

@@ -27,10 +27,12 @@ public class Teller {
         // Instantiate cards to be added
         Welcome welcomePanel = new Welcome(containerPanel);
         CreateAccount createAccountPanel = new CreateAccount(containerPanel);
+        AccountPanel accountPanel = new AccountPanel(containerPanel);
 
         // Add cards to the panel
         containerPanel.add(welcomePanel.getPanel(), "Welcome");
         containerPanel.add(createAccountPanel.getPanel(), "CreateAccount");
+        containerPanel.add(accountPanel.getPanel(), "AccountPanel");
 
         // Add panel to Container param
         mFrameContainer.add(containerPanel, BorderLayout.CENTER);

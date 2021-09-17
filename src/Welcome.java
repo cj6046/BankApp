@@ -65,7 +65,7 @@ public class Welcome {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Teller t = new Teller();
-                t.changeCard(container, "CreateAccount");
+                t.changeCard(container, "AccountPanel");
                 //String testUserID = userText.getText();
                 //String testUserPass = String.valueOf(passText.getPassword());
 
@@ -77,7 +77,14 @@ public class Welcome {
 
         createAccountButton = new JButton("Create an account");
         createAccountButton.setBounds(165, 165, 160, 25);
-        //createAccountButton.addActionListener(...)
+        createAccountButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Teller t = new Teller();
+                t.changeCard(container, "CreateAccount");
+            }
+            
+        });
         panel.add(createAccountButton);
 
         
