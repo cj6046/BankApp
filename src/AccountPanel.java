@@ -15,9 +15,11 @@ public class AccountPanel {
     private JLabel welcomeLabel;
     private JButton logoutButton;
     private Container container;
+    private Bank bank;
 
 
-    public AccountPanel(Container container) {
+    public AccountPanel(Container container, Bank bank) {
+        this.bank = bank;
         this.container = container;
         this.createPanel();
     }
@@ -26,7 +28,7 @@ public class AccountPanel {
         panel = new JPanel(null);
 
         // Welcome to this page
-        welcomeLabel = new JLabel("Welcome to Your Account");
+        welcomeLabel = new JLabel("Welcome to Your Account, ");
         welcomeLabel.setBounds(180, 10, 160, 25);
         panel.add(welcomeLabel);
 

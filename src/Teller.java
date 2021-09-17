@@ -14,6 +14,7 @@ public class Teller {
 
     //Instance variables
     private JPanel containerPanel;
+    private Bank bank = new Bank();
 
     /**
      * Method to add all of the different "cards" together on one panel
@@ -25,9 +26,9 @@ public class Teller {
         containerPanel = new JPanel(new CardLayout());
 
         // Instantiate cards to be added
-        Welcome welcomePanel = new Welcome(containerPanel);
-        CreateAccount createAccountPanel = new CreateAccount(containerPanel);
-        AccountPanel accountPanel = new AccountPanel(containerPanel);
+        Welcome welcomePanel = new Welcome(containerPanel, bank);
+        CreateAccount createAccountPanel = new CreateAccount(containerPanel, bank);
+        AccountPanel accountPanel = new AccountPanel(containerPanel, bank);
 
         // Add cards to the panel
         containerPanel.add(welcomePanel.getPanel(), "Welcome");
@@ -38,11 +39,21 @@ public class Teller {
         mFrameContainer.add(containerPanel, BorderLayout.CENTER);
     }
 
+    /**
+     * Method to change which page is currently being viewed
+     * 
+     * @param container The Container from the card
+     * @param cardName The name of the card to be switched to
+     */
     public void changeCard(Container container, String cardName) {
         CardLayout cl = (CardLayout)(container.getLayout());
         cl.show(container, cardName);
     }
 
+    /**
+     * Method to insantiate compnents
+     *      and make GUI viewable
+     */
     private static void createAndShowGUI() {
         // Instantiate the Frame
         JFrame mFrame = new JFrame("Jones Bank");
@@ -60,8 +71,10 @@ public class Teller {
         mFrame.setVisible(true);
     }
 
-
+    /**
+     * Method to be run
+     */
     public static void main(String[] args) {
         createAndShowGUI();
-    } // End of main
+    }
 } // End of Teller Class

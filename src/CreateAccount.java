@@ -20,12 +20,14 @@ public class CreateAccount {
     private JPasswordField confirmPassText;
     private JButton createAccountButton;
     private Container container;
+    private Bank bank;
 
     /**
      * Constructor
      * @param container The Container of this Class
      */
-    public CreateAccount(Container container) {
+    public CreateAccount(Container container, Bank bank) {
+        this.bank = bank;
         this.container = container;
         this.createPanel();
     }
@@ -79,8 +81,19 @@ public class CreateAccount {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                Teller t = new Teller();
-                t.changeCard(container, "AccountPanel");
+                // Input validation for matching password fields
+                if (String.valueOf(passText.getPassword()).equals(String.valueOf(confirmPassText.getPassword()))) {
+                    bank.addAccount(new Account(userText.getText(), String.valueOf(passText.getPassword()), 0));
+                    Teller t = new Teller();
+                    t.changeCard(container, "AccountPanel");
+                } else {
+                    JLabel invalidLabel = new JLabel("The passwords didn't match.");
+                    invalidLabel.setBounds(120, 185, 200, 25);
+                    invalidLabel.setForeground(Color.red);
+                    panel.add(invalidLabel);
+                    panel.updateUI();
+                }
+  
             }
 
         });
@@ -92,8 +105,15 @@ public class CreateAccount {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //Clear fields
+                userText.setText("");
+                passText.setText("");
+                confirmPassText.setText("");
+                
+                //Change cards
                 Teller t = new Teller();
                 t.changeCard(container, "Welcome");
+
             }
         });
         panel.add(backButton);

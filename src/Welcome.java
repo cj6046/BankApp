@@ -24,8 +24,11 @@ public class Welcome {
 
     private Container container;
 
+    private Bank bank;
 
-    public Welcome(Container container) { 
+
+    public Welcome(Container container, Bank bank) { 
+        this.bank = bank;
         this.container = container;
         this.createPanel();
     }

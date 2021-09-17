@@ -21,8 +21,8 @@ public class Bank {
     /**
      * Method to add an Account to the list
      */
-    public void addAccount() {
-        accounts.add(new Account());
+    public void addAccount(Account newAccount) {
+        accounts.add(newAccount);
     }
 
     /**
