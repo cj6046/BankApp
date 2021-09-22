@@ -1,6 +1,6 @@
 ## A New Bank
 
-Welcome to my in-progress banking app. It is a very simple app that I am using to practice and learn. Feel free to follow my journey as I learn and grow.
+Welcome to my in-progress banking app, done with Swing and MVC architecture. It is a simple app that I am using to practice and learn. Feel free to follow my journey as I learn and grow.
 
 # My First Solo Project
 
@@ -15,9 +15,9 @@ My goals for this Banking app seem pretty achievable with where I am now. Here t
     ✔️ Deposit money, adding to the balance \
     ✔️ Withdraw money, subtracting from the balance \
     ⚠️ Still need to add input validation to these!!
-* Create a simple GUI to navigate the app and login
+* Create a simple GUI to navigate the app and login \
     ✔️ Use Swing to craft GUI
-    * Change to an MVC architecture to allow communication
+    * Change to an MVC architecture to allow communication \
         ⚠️ (In progress on branch "feature-teller"
 * Find a way to store the information even when the app is closed.
     * In the beginning, most likely a simple .txt file I read and write to
