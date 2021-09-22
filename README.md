@@ -15,9 +15,12 @@ My goals for this Banking app seem pretty achievable with where I am now. Here t
     ✔️ Deposit money, adding to the balance \
     ✔️ Withdraw money, subtracting from the balance \
     ⚠️ Still need to add input validation to these!!
+* Create a simple GUI to navigate the app and login
+    ✔️ Use Swing to craft GUI
+    * Change to an MVC architecture to allow communication
+        ⚠️ (In progress on branch "feature-teller"
 * Find a way to store the information even when the app is closed.
     * In the beginning, most likely a simple .txt file I read and write to
     * EVENTUALLY, I would love to learn some basic SQL to communicate with a database
 * Use that stored information to allow the user to create a permanent account
     * Add basic password functionality
-* Create a simple GUI to navigate the app and login
