@@ -15,15 +15,19 @@ public class AccountPanel {
     private JLabel welcomeLabel;
     private JButton logoutButton;
     private Container container;
-    private Bank bank;
 
-
-    public AccountPanel(Container container, Bank bank) {
-        this.bank = bank;
+    /**
+     * Constructor for AccountPanel
+     * @param container The Container this panel is added to
+     */
+    public AccountPanel(Container container) {
         this.container = container;
         this.createPanel();
     }
 
+    /**
+     * Method to add all of the components to the panel
+     */
     public void createPanel() {
         panel = new JPanel(null);
 
@@ -38,13 +42,17 @@ public class AccountPanel {
         logoutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Teller t = new Teller();
+                BankViewer t = new BankViewer();
                 t.changeCard(container, "Welcome");
             }
         });
         panel.add(logoutButton);
     }
 
+    /**
+     * Getter method for the panel
+     * @return The panel with all of the components
+     */
     public JPanel getPanel() {
         return panel;
     }

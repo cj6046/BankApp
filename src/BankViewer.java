@@ -10,11 +10,20 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Teller {
+public class BankViewer {
 
     //Instance variables
     private JPanel containerPanel;
-    private Bank bank = new Bank();
+    private WelcomePanel welcomePanel;
+    private CreateAccountPanel createAccountPanel;
+    private AccountPanel accountPanel;
+
+    /**
+     * Constructor for BankViewer
+     */
+    public BankViewer() {
+
+    }
 
     /**
      * Method to add all of the different "cards" together on one panel
@@ -26,9 +35,9 @@ public class Teller {
         containerPanel = new JPanel(new CardLayout());
 
         // Instantiate cards to be added
-        Welcome welcomePanel = new Welcome(containerPanel, bank);
-        CreateAccount createAccountPanel = new CreateAccount(containerPanel, bank);
-        AccountPanel accountPanel = new AccountPanel(containerPanel, bank);
+        welcomePanel = new WelcomePanel(containerPanel);
+        createAccountPanel = new CreateAccountPanel(containerPanel);
+        accountPanel = new AccountPanel(containerPanel);
 
         // Add cards to the panel
         containerPanel.add(welcomePanel.getPanel(), "Welcome");
@@ -54,7 +63,7 @@ public class Teller {
      * Method to insantiate compnents
      *      and make GUI viewable
      */
-    private static void createAndShowGUI() {
+    public void createAndShowGUI() {
         // Instantiate the Frame
         JFrame mFrame = new JFrame("Jones Bank");
         mFrame.setSize(500, 500);
@@ -63,8 +72,7 @@ public class Teller {
         mFrame.setLocationRelativeTo(null);
 
         // Create and setup the content pane
-        Teller teller = new Teller();
-        teller.addContentToPane(mFrame.getContentPane());
+        this.addContentToPane(mFrame.getContentPane());
 
         // Display the window
         mFrame.pack();
@@ -72,9 +80,22 @@ public class Teller {
     }
 
     /**
-     * Method to be run
+     * ONLY GETTERS AND SETTERS BELOW THIS POINT
      */
-    public static void main(String[] args) {
-        createAndShowGUI();
+    public JPanel getPanel() {
+        return containerPanel;
     }
-} // End of Teller Class
+
+    public WelcomePanel getWelcomePanel() {
+        return welcomePanel;
+    }
+
+    public CreateAccountPanel getCreateAccountPanel() {
+        return createAccountPanel;
+    }
+
+    public AccountPanel getAccountPanel() {
+        return accountPanel;
+    }
+
+} // End of BankViewer Class

@@ -8,7 +8,7 @@ import java.awt.event.*;
  * @author Chris Jones
  * @version 15 Sept. 2021
  */
-public class CreateAccount {
+public class CreateAccountPanel {
     //instance variables
     private JPanel panel;
     private JLabel welcomeLabel;
@@ -20,14 +20,12 @@ public class CreateAccount {
     private JPasswordField confirmPassText;
     private JButton createAccountButton;
     private Container container;
-    private Bank bank;
 
     /**
      * Constructor
      * @param container The Container of this Class
      */
-    public CreateAccount(Container container, Bank bank) {
-        this.bank = bank;
+    public CreateAccountPanel(Container container) {
         this.container = container;
         this.createPanel();
     }
@@ -83,8 +81,8 @@ public class CreateAccount {
             public void actionPerformed(ActionEvent e) {
                 // Input validation for matching password fields
                 if (String.valueOf(passText.getPassword()).equals(String.valueOf(confirmPassText.getPassword()))) {
-                    bank.addAccount(new Account(userText.getText(), String.valueOf(passText.getPassword()), 0));
-                    Teller t = new Teller();
+                    //bank.addAccount(new AccountModel(userText.getText(), String.valueOf(passText.getPassword()), 0));
+                    BankViewer t = new BankViewer();
                     t.changeCard(container, "AccountPanel");
                 } else {
                     JLabel invalidLabel = new JLabel("The passwords didn't match.");
@@ -111,7 +109,7 @@ public class CreateAccount {
                 confirmPassText.setText("");
                 
                 //Change cards
-                Teller t = new Teller();
+                BankViewer t = new BankViewer();
                 t.changeCard(container, "Welcome");
 
             }
@@ -120,10 +118,11 @@ public class CreateAccount {
     }
 
     /**
-     * Getter method for the JPanel of this Class
-     * @return The JPanel with the components
+     * ONLY GETTERS AND SETTERS BELOW
      */
     public JPanel getPanel() {
         return panel;
     }
+
+    // TODO add getters and setters for each GUI component
 }

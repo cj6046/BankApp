@@ -7,22 +7,31 @@ import java.util.ArrayList;
  * @author Christopher Jones
  * @version 15 Sept. 2021
  */
-public class Bank {
+public class BankModel {
 
-    private ArrayList<Account> accounts;
+    private ArrayList<AccountModel> accounts;
 
     /**
      * Constructor to initialize ArrayList
      */
-    public Bank() {
-        accounts = new ArrayList<Account>();
+    public BankModel() {
+        accounts = new ArrayList<AccountModel>();
     }
 
     /**
      * Method to add an Account to the list
      */
-    public void addAccount(Account newAccount) {
+    public void addAccount(AccountModel newAccount) {
         accounts.add(newAccount);
+    }
+
+    /**
+     * Method to get a particular account
+     * @param pos The position of the Account in the arraylist
+     * @return The Account at the specified position
+     */
+    public AccountModel getAccountModel(int pos) {
+        return accounts.get(pos);
     }
 
     /**
@@ -30,7 +39,7 @@ public class Bank {
      */
     public int findAccount(String accountID) {
         int accPos = 0;
-        for (Account a : accounts) {
+        for (AccountModel a : accounts) {
             if (a.getName().equals(accountID)) {
                 accPos = accounts.indexOf(a);
             }
@@ -46,7 +55,7 @@ public class Bank {
      * @param account The account found using the testUserID
      * @return
      */
-    public boolean authenticate(String testUserID, String testUserPass, Account account) {
+    public boolean authenticate(String testUserID, String testUserPass, AccountModel account) {
         boolean authenticated = false;
         return authenticated;
     }

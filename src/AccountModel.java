@@ -1,21 +1,21 @@
 /**
  * This is the storage class for Account information
  */
-public class Account {
+public class AccountModel {
     //Instance variables
     private String accountHolder;
     private String password;
     private double balance;
 
     //Constructor
-    public Account(String accountHolder, String password, double balance) {
+    public AccountModel(String accountHolder, String password, double balance) {
         this.accountHolder = accountHolder;
         this.password = password;
         this.balance = balance;
     }
 
     //Parameterless constructor
-    public Account() {
+    public AccountModel() {
         this("", "0000", 0.0);
     }
 

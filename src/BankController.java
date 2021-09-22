@@ -8,13 +8,30 @@
 public class BankController {
 
     //Instance variables
-    private static Bank bank;
-    private static Teller teller;
-/*
-    public static void main (String[] args) {
-        bank = new Bank();
-        teller = new Teller();
-        teller.createAndShowGUI();
+    private BankModel model;
+    private BankViewer view;
+
+    public BankController(BankModel model, BankViewer view) {
+        this.model = model;
+        this.view = view;
+        this.initView();
     }
-    */
+
+    public void initView() {
+        view.createAndShowGUI();
+    }
+
+    public void initController() {
+        // WelcomePanel
+        view.getWelcomePanel().getLoginButton().addActionListener(
+            e -> view.changeCard(view.getWelcomePanel().getContainer(), "AccountPanel")
+        );
+
+        view.getWelcomePanel().getCreateAccountButton().addActionListener(
+            e -> view.changeCard(view.getWelcomePanel().getContainer(), "CreateAccount")
+        );
+
+        // CreateAccountPanel
+        view.getCreateAccountPanel(); // TODO finish adding action listeners after finishing todo's in CreateAccountPanel
+    }
 }
