@@ -74,52 +74,21 @@ public class CreateAccountPanel {
         createAccountButton = new JButton("Create Your New Account");
         createAccountButton.setBounds(150, 150, 200, 25);
         createAccountButton.setFocusable(false);
-/*
-        createAccountButton.addActionListener(new ActionListener() {
-            /**
-             * Method to create a new Account with the provided data
-             
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Input validation for matching password fields
-                if (String.valueOf(passText.getPassword()).equals(String.valueOf(confirmPassText.getPassword()))) {
-                    //bank.addAccount(new AccountModel(userText.getText(), String.valueOf(passText.getPassword()), 0));
-                    BankViewer t = new BankViewer();
-                    t.changeCard(container, "AccountPanel");
-                } else {
-                    JLabel invalidLabel = new JLabel("The passwords didn't match.");
-                    invalidLabel.setBounds(120, 185, 200, 25);
-                    invalidLabel.setForeground(Color.red);
-                    panel.add(invalidLabel);
-                    panel.updateUI();
-                }
-  
-            }
-
-        });
-*/
         panel.add(createAccountButton);
 
         // Back button
         backButton = new JButton("Back to Home");
         backButton.setBounds(190, 450, 120, 25);
-/*
-        backButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Clear fields
-                userText.setText("");
-                passText.setText("");
-                confirmPassText.setText("");
-                
-                //Change cards
-                BankViewer t = new BankViewer();
-                t.changeCard(container, "Welcome");
-
-            }
-        });
-*/
         panel.add(backButton);
+    }
+
+    /**
+     * Method to clear all of the text fields in the Panel
+     */
+    public void clearPanel() {
+        this.userText.setText("");
+        this.passText.setText("");
+        this.confirmPassText.setText("");
     }
 
     /**

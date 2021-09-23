@@ -63,33 +63,20 @@ public class WelcomePanel {
         loginButton = new JButton("login");
         loginButton.setBounds(205, 130, 80, 25);
         loginButton.setFocusable(false);
-/*      
-        loginButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                BankViewer t = new BankViewer();
-                t.changeCard(container, "AccountPanel");
-            }
-
-        });
-*/
         panel.add(loginButton);
         // Create account button
         createAccountButton = new JButton("Create an account");
         createAccountButton.setBounds(165, 165, 160, 25);
-/*
-        createAccountButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                BankViewer t = new BankViewer();
-                t.changeCard(container, "CreateAccount");
-            }
-            
-        });
-*/
         panel.add(createAccountButton);  
     } // End of createPanel()
+
+    /**
+     * Method to clear all text fields on panel
+     */
+    public void clearPanel() {
+        this.userText.setText("");
+        this.passText.setText("");
+    }
 
     /**
      * ONLY GETTERS AND SETTERS BELOW THIS POINT

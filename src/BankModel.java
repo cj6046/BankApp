@@ -16,6 +16,7 @@ public class BankModel {
      */
     public BankModel() {
         accounts = new ArrayList<AccountModel>();
+        accounts.add(new AccountModel("c", "123", 500));
     }
 
     /**
