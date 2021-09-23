@@ -11,7 +11,7 @@ import java.awt.event.*;
 public class CreateAccountPanel {
     //instance variables
     private JPanel panel;
-    private JLabel welcomeLabel;
+    private JLabel titleLabel;
     private JLabel userLabel;
     private JLabel passLabel;
     private JLabel confirmPassLabel;
@@ -19,6 +19,7 @@ public class CreateAccountPanel {
     private JPasswordField passText;
     private JPasswordField confirmPassText;
     private JButton createAccountButton;
+    private JButton backButton;
     private Container container;
 
     /**
@@ -38,9 +39,9 @@ public class CreateAccountPanel {
         panel = new JPanel(null);
 
         // Welcome to this page
-        welcomeLabel = new JLabel("Create an Account Here!");
-        welcomeLabel.setBounds(190, 10, 165, 25);
-        panel.add(welcomeLabel);
+        titleLabel = new JLabel("Create an Account Here!");
+        titleLabel.setBounds(190, 10, 165, 25);
+        panel.add(titleLabel);
 
         // Enter a new username
         userLabel = new JLabel("Enter a new username: ");
@@ -73,10 +74,11 @@ public class CreateAccountPanel {
         createAccountButton = new JButton("Create Your New Account");
         createAccountButton.setBounds(150, 150, 200, 25);
         createAccountButton.setFocusable(false);
+/*
         createAccountButton.addActionListener(new ActionListener() {
             /**
              * Method to create a new Account with the provided data
-             */
+             
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Input validation for matching password fields
@@ -95,11 +97,13 @@ public class CreateAccountPanel {
             }
 
         });
+*/
         panel.add(createAccountButton);
 
         // Back button
-        JButton backButton = new JButton("Back to Home");
+        backButton = new JButton("Back to Home");
         backButton.setBounds(190, 450, 120, 25);
+/*
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -114,6 +118,7 @@ public class CreateAccountPanel {
 
             }
         });
+*/
         panel.add(backButton);
     }
 
@@ -124,5 +129,34 @@ public class CreateAccountPanel {
         return panel;
     }
 
-    // TODO add getters and setters for each GUI component
+    public JLabel gettitleLabel() {
+        return titleLabel;
+    }
+    public JLabel getUserLabel() {
+        return userLabel;
+    }
+    public JLabel getPassLabel() {
+        return passLabel;
+    }
+    public JLabel getConfirmPassLabel() {
+        return confirmPassLabel;
+    }
+    public JTextField getUserText() {
+        return userText;
+    }
+    public JPasswordField getPassText() {
+        return passText;
+    }
+    public JPasswordField getConfirmPassText() {
+        return confirmPassText;
+    }
+    public JButton getCreateAccountButton() {
+        return createAccountButton;
+    }
+    public JButton getBackButton() {
+        return backButton;
+    }
+    public Container getContainer() {
+        return container;
+    }
 }

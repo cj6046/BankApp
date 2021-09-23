@@ -24,14 +24,33 @@ public class BankController {
     public void initController() {
         // WelcomePanel
         view.getWelcomePanel().getLoginButton().addActionListener(
-            e -> view.changeCard(view.getWelcomePanel().getContainer(), "AccountPanel")
+            (e) -> view.changeCard(view.getWelcomePanel().getContainer(), "AccountPanel")
         );
 
         view.getWelcomePanel().getCreateAccountButton().addActionListener(
-            e -> view.changeCard(view.getWelcomePanel().getContainer(), "CreateAccount")
+            (e) -> view.changeCard(view.getWelcomePanel().getContainer(), "CreateAccount")
         );
 
         // CreateAccountPanel
-        view.getCreateAccountPanel(); // TODO finish adding action listeners after finishing todo's in CreateAccountPanel
+        view.getCreateAccountPanel().getBackButton().addActionListener(
+            (e) -> view.changeCard(view.getCreateAccountPanel().getContainer(), "Welcome")
+        );
+
+        view.getCreateAccountPanel().getCreateAccountButton().addActionListener(
+            (e) -> {
+                // TODO implement input validation for matching passwords
+                // Store user input
+                String username = view.getCreateAccountPanel().getUserText().getText();
+                char[] passArray = view.getCreateAccountPanel().getPassText().getPassword();
+                String password = String.valueOf(passArray);
+                // create a new Account object with user input
+                model.addAccount(new AccountModel(username, password, 0));
+            }
+        );
+
+        // AccountPanel
+        view.getAccountPanel().getLogoutButton().addActionListener(
+            (e) -> view.changeCard(view.getAccountPanel().getContainer(), "Welcome")
+        );
     }
 }

@@ -13,6 +13,10 @@ public class AccountPanel {
     // Instance variables
     private JPanel panel;
     private JLabel welcomeLabel;
+    private JLabel balanceLabel;
+    private JLabel amountLabel;
+    private JButton depositButton;
+    private JButton withdrawButton;
     private JButton logoutButton;
     private Container container;
 
@@ -39,6 +43,7 @@ public class AccountPanel {
         // Logout Button
         logoutButton = new JButton("Logout");
         logoutButton.setBounds(210, 450, 80, 25);
+/*
         logoutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -46,15 +51,35 @@ public class AccountPanel {
                 t.changeCard(container, "Welcome");
             }
         });
+*/
         panel.add(logoutButton);
     }
 
     /**
-     * Getter method for the panel
-     * @return The panel with all of the components
+     * GETTERS AND SETTERS ONLY BELOW THIS POINT
      */
     public JPanel getPanel() {
         return panel;
     }
-    
+    public JLabel getBalanceLabel() {
+        return balanceLabel;
+    }
+    public JLabel getWelcomeLabel() {
+        return welcomeLabel;
+    }
+    public JLabel getAmountLabel() {
+        return amountLabel;
+    }
+    public JButton getDepositButton() {
+        return depositButton;
+    }
+    public JButton getWithdrawButton() {
+        return withdrawButton;
+    }
+    public JButton getLogoutButton() {
+        return logoutButton;
+    }
+    public Container getContainer() {
+        return container;
+    }
 }
