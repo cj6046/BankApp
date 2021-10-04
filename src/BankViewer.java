@@ -1,13 +1,12 @@
 /**
- * This will be the user-facing class that allows the user to interact with
- * the Bank and Account classes.
+ * This class functions as the main View in the MVC model. It uses a card layout to attach 
+ * other GUI panes into the view and send data to and receive data from the controller.
  * 
  * @author Chris Jones
- * @version 15 Sept. 2021
+ * @version 3 Oct. 2021
  */
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 
 public class BankViewer {
@@ -22,7 +21,7 @@ public class BankViewer {
      * Constructor for BankViewer
      */
     public BankViewer() {
-
+        this.createAndShowGUI();
     }
 
     /**
@@ -39,12 +38,12 @@ public class BankViewer {
         createAccountPanel = new CreateAccountPanel(containerPanel);
         accountPanel = new AccountPanel(containerPanel);
 
-        // Add cards to the panel
+        // Add cards to the panel and assign names to be used
         containerPanel.add(welcomePanel.getPanel(), "Welcome");
         containerPanel.add(createAccountPanel.getPanel(), "CreateAccount");
         containerPanel.add(accountPanel.getPanel(), "AccountPanel");
 
-        // Add panel to Container param
+        // Add panel to Container
         mFrameContainer.add(containerPanel, BorderLayout.CENTER);
     }
 
@@ -60,7 +59,7 @@ public class BankViewer {
     }
 
     /**
-     * Method to insantiate compnents
+     * Method to insantiate components
      *      and make GUI viewable
      */
     public void createAndShowGUI() {
@@ -82,20 +81,36 @@ public class BankViewer {
     /**
      * ONLY GETTERS AND SETTERS BELOW THIS POINT
      */
+
+    /**
+     * Accessor method for the panel that holds all the others
+     * @return The instance of the panel with all of the components
+     */
     public JPanel getPanel() {
         return containerPanel;
     }
 
+    /**
+     * Accessor method for the WelcomePanel
+     * @return The instance of the WelcomePanel associated with this viewer
+     */
     public WelcomePanel getWelcomePanel() {
         return welcomePanel;
     }
 
+    /**
+     * Accessor method for the CreateAccountPanel
+     * @return The instance of the CreateAccountPanel associated with this viewer
+     */
     public CreateAccountPanel getCreateAccountPanel() {
         return createAccountPanel;
     }
 
+    /**
+     * Accessor method for the AccountPanel
+     * @return The instance of the AccountPanel associated with this viewer
+     */
     public AccountPanel getAccountPanel() {
         return accountPanel;
     }
-
 } // End of BankViewer Class

@@ -1,14 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-
-
 
 /**
- * This class is the opening frame of the applet
+ * This Class holds the card for the home login screen, welcoming the
+ * user to the app. It places all GUI components on 
+ * this card, but leaves implementation of the associated action
+ * listeners to the BankController.
  * 
  * @author Chris Jones
- * @version 15 Sept. 2021
+ * @version 3 Oct. 2021
  */
 public class WelcomePanel {
     // Instance variables
@@ -24,7 +24,7 @@ public class WelcomePanel {
 
     /**
      * Constructor to create a WelcomePanel
-     * @param container The Container the WelcomePanel is on
+     * @param container The Container the WelcomePanel is added to
      */
     public WelcomePanel(Container container) { 
         this.container = container;
@@ -32,7 +32,8 @@ public class WelcomePanel {
     }
 
     /**
-     * Method to add all of the components to the WelcomePanel
+     * Method to instantiate the WelcomePanel JPanel
+     * and add all of the components to the WelcomePanel
      */
     private void createPanel() {
         // Insantiates panel with AbsoluteLayout
@@ -81,31 +82,77 @@ public class WelcomePanel {
     /**
      * ONLY GETTERS AND SETTERS BELOW THIS POINT
      */
+
+    /**
+     * Accessor method for the panel
+     * @return The instance of the panel with all of the components
+     */
     public JPanel getPanel() {
         return panel;
     }
-    public JLabel getWelcomeLabel() {
-        return welcomeLabel;
-    }
-    public JLabel getUserLabel() {
-        return userLabel;
-    }
-    public JLabel getPassLabel() {
-        return passLabel;
-    }
-    public JTextField getUserText() {
-        return userText;
-    }
-    public JPasswordField getPassText() {
-        return passText;
-    }
-    public JButton getLoginButton() {
-        return loginButton;
-    }
-    public JButton getCreateAccountButton() {
-        return createAccountButton;
-    }
+
+    /**
+     * Accessor method for the container of the panel
+     * @return The instance of the container that holds this panel
+     */
     public Container getContainer() {
         return container;
     }
+
+    /**
+     * Accessor method for the welcome label
+     * @return The instance of the welcome label associated with this panel
+     */
+    public JLabel getWelcomeLabel() {
+        return welcomeLabel;
+    }
+
+    /**
+     * Accessor method for the username label
+     * @return The instance of the usernmae label associated with this panel
+     */
+    public JLabel getUserLabel() {
+        return userLabel;
+    }
+
+    /**
+     * Accessor method for the password label
+     * @return The instance of the password label associated with this panel
+     */
+    public JLabel getPassLabel() {
+        return passLabel;
+    }
+
+    /**
+     * Accessor method for the username textfield
+     * @return The instance of the username textfield associated with this panel
+     */
+    public JTextField getUserText() {
+        return userText;
+    }
+
+    /**
+     * Accessor method for the password passwordfield
+     * @return The instance of the password passwordfield associated with this panel
+     */
+    public JPasswordField getPassText() {
+        return passText;
+    }
+
+    /**
+     * Accessor method for the login button
+     * @return The instance of the login button associated with this panel
+     */
+    public JButton getLoginButton() {
+        return loginButton;
+    }
+
+    /**
+     * Accessor method for the account creation button
+     * @return The instance of the account creation button associated with this panel
+     */
+    public JButton getCreateAccountButton() {
+        return createAccountButton;
+    }
+
 }

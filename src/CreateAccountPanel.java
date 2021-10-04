@@ -1,12 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
 /**
- * This Class is the account creation menu
+ * This Class holds the card for creating an account, inlcuding two text fields
+ * for the password and password confirmation. It places all GUI components on 
+ * this card, but leaves implementation of the associated action
+ * listeners to the BankController.
  * 
  * @author Chris Jones
- * @version 15 Sept. 2021
+ * @version 3 Oct. 2021
  */
 public class CreateAccountPanel {
     //instance variables
@@ -23,8 +25,8 @@ public class CreateAccountPanel {
     private Container container;
 
     /**
-     * Constructor
-     * @param container The Container of this Class
+     * Constructor for CreateAccountPanel
+     * @param container The Container this panel is added to
      */
     public CreateAccountPanel(Container container) {
         this.container = container;
@@ -32,7 +34,8 @@ public class CreateAccountPanel {
     }
 
     /**
-     * Method to create a JPanel with all of the components this page needs
+     * Method to instantiate the CreateAccountPanel JPanel
+     * and add all of the components to the CreateAccountPanel
      */
     public void createPanel() {
         // Instantiates JPanel to be added to
@@ -92,40 +95,94 @@ public class CreateAccountPanel {
     }
 
     /**
-     * ONLY GETTERS AND SETTERS BELOW
+     * GETTERS AND SETTERS ONLY BELOW THIS POINT
+     */
+
+    /**
+     * Accessor method for the panel
+     * @return The instance of the panel with all of the components
      */
     public JPanel getPanel() {
         return panel;
     }
 
+    /**
+     * Accessor method for the container of the panel
+     * @return The instance of the container that holds this panel
+     */
+    public Container getContainer() {
+        return container;
+    }
+
+    /**
+     * Accessor method for the title label
+     * @return The instance of the title label associated with this panel
+     */
     public JLabel gettitleLabel() {
         return titleLabel;
     }
+
+    /**
+     * Accessor method for the username label
+     * @return The instance of the usernmae label associated with this panel
+     */
     public JLabel getUserLabel() {
         return userLabel;
     }
+
+    /**
+     * Accessor method for the password label
+     * @return The instance of the password label associated with this panel
+     */
     public JLabel getPassLabel() {
         return passLabel;
     }
+
+    /**
+     * Accessor method for the password confirmation label
+     * @return The instance of the password confirmation label associated with this panel
+     */
     public JLabel getConfirmPassLabel() {
         return confirmPassLabel;
     }
+
+    /**
+     * Accessor method for the username textfield
+     * @return The instance of the username textfield associated with this panel
+     */
     public JTextField getUserText() {
         return userText;
     }
+
+    /**
+     * Accessor method for the password passwordfield
+     * @return The instance of the password passwordfield associated with this panel
+     */
     public JPasswordField getPassText() {
         return passText;
     }
+
+    /**
+     * Accessor method for the password confirmation textfield
+     * @return The instance of the password confirmation textfield associated with this panel
+     */
     public JPasswordField getConfirmPassText() {
         return confirmPassText;
     }
+
+    /**
+     * Accessor method for the account creation button
+     * @return The instance of the account creation button associated with this panel
+     */
     public JButton getCreateAccountButton() {
         return createAccountButton;
     }
+
+    /**
+     * Accessor method for the back button
+     * @return The instance of the back button associated with this panel
+     */
     public JButton getBackButton() {
         return backButton;
-    }
-    public Container getContainer() {
-        return container;
     }
 }

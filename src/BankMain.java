@@ -1,8 +1,8 @@
 /**
- * This will be the driver class for the Bank app
+ * This class is the main driver class of the Bank applet.
  * 
  * @author Chris Jones
- * @version 18 Sept. 2021
+ * @version 3 Oct. 2021
  */
 
 public class BankMain {
